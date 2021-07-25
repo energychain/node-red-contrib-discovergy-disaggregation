@@ -6,6 +6,7 @@ module.exports = function(RED) {
         node.on('input', async function(msg) {
           const to = new Date().getTime();
           let from = node.context().get('from');
+          if((typeof msg.payload !== 'undefined')&&(typeof msg.payload.from !== 'undefined')) from = msg.payload.from;
           if((typeof from == 'undefined')||(from == null)||(from < to - 7 * 86400000)) from = to - 7*86400000;
           const res = await axios.get('https://api.discovergy.com/public/v1/activities?meterId='+config.meterid+'&from='+from+'&to='+to, {
             auth: {
