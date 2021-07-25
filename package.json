@@ -1,5 +1,5 @@
 {
-  "name": "red-contrib-discovergy-disaggregation",
+  "name": "node-red-contrib-discovergy-disaggregation",
   "version": "1.0.0",
   "description": "Node Red Erweiterung zur Nutzung der Discovergy Disaggregation.",
   "main": "index.js",
